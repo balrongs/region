@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "message": "Invalid Parameters",
+  "errors": [
+    {
+    "code": "V0001",
+    "title": "validación de `limit`"
+    },
+    {
+    "code": "V0002",
+    "title": "validación de `offset`"
+    }
+  ]
+}

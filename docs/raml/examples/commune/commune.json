@@ -1,0 +1,17 @@
+{
+  "data":[
+    {
+      "commune": {
+        "id": "b4df629c-7dfc-47de-9a94-e35630e9e556",
+        "name": "ARICA",
+        "region": {
+          "id": "87093d4d-fb29-4406-857e-bd0a83a443ea",
+          "name": "REGIÓN DE ARICA Y PARINACOTA"
+        }
+      }
+    }
+  ],
+  "total":200,
+  "page":1,
+  "per_page":1
+}

@@ -1,0 +1,10 @@
+{
+  "status": "unauthorized",
+  "message": "Invalid Token",
+  "errors": [
+    {
+    "code": "A0001",
+    "title": "invalid token."
+    }
+  ]
+}

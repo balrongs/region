@@ -1,0 +1,28 @@
+{
+
+  "data":[
+      {
+          "id": "b4df629c-7dfc-47de-9a94-e35630e9e556",
+          "name": "ARICA",
+          "region_id": "87093d4d-fb29-4406-857e-bd0a83a443ea"
+      },
+      {
+          "id": "72291a84-5b79-4baf-8db7-8a6cb3edecba",
+          "name": "PUTRE",
+          "region_id": "87093d4d-fb29-4406-857e-bd0a83a443ea"
+      },
+      {
+          "id": "ce274a33-5557-40b2-abe7-c8a2daedbe7e",
+          "name": "CAMARONES",
+          "region_id": "87093d4d-fb29-4406-857e-bd0a83a443ea"
+      },
+      {
+          "id": "316939bd-9e6f-4787-ba9b-5a564ce1d01e",
+          "name": "IQUIQUE",
+          "region_id": "baeae5dc-e702-4829-9ba6-2f562a72953c"
+      }
+  ],
+  "total":200,
+  "page":1,
+  "per_page":10
+}

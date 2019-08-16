@@ -1,0 +1,19 @@
+# package directories
+node_modules
+
+# Documentation output
+docs/api.html
+docs/assets
+
+# Babel output
+dist
+
+# local storage files
+.DS_Store
+.vscode
+
+# Postgres data
+pgdata/*
+
+# Environment file
+.env

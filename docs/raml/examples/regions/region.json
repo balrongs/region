@@ -1,0 +1,43 @@
+{
+  "data":[
+    {
+    "region": {
+      "id": "baeae5dc-e702-4829-9ba6-2f562a72953c",
+      "name": "REGIÓN DE TARAPACÁ",
+      "communes": [
+        {
+        "id": "316939bd-9e6f-4787-ba9b-5a564ce1d01e",
+        "name": "IQUIQUE"
+        },
+        {
+        "id": "8086d9f3-cfed-48f1-81ae-ca7267aa41ae",
+        "name": "ALTO HOSPICIO"
+        },
+        {
+        "id": "572dbef1-8ca3-44f4-9105-3fc4951de968",
+        "name": "POZO ALMONTE"
+        },
+        {
+        "id": "fa3c1f5d-60fa-4fd5-83e6-2339b9b96056",
+        "name": "CAMIÑA"
+        },
+        {
+        "id": "e30f9642-e931-4162-805e-1405c64ccac0",
+        "name": "COLCHANE"
+        },
+        {
+        "id": "af1f081b-c50e-4e94-b7ff-d7c7de12ad47",
+        "name": "HUARA"
+        },
+        {
+        "id": "97106202-95ee-410a-a885-0513c2a5b37d",
+        "name": "PICA"
+        }
+      ]
+      }
+    }
+  ],
+  "total":15,
+  "page":0,
+  "per_page":0
+}

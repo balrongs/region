@@ -1,0 +1,193 @@
+#%RAML 1.0
+title: Regions and Communes
+version: v1
+protocols: [HTTP, HTTPS]
+mediaType: application/json
+baseUri: https://api.domain.com/{version}
+securitySchemes:
+  oauth_2_0: !include raml/schemes/oauth_2_0.raml
+types:
+  Region: !include raml/types/region.raml
+  Commune: !include raml/types/commune.raml
+  Error: !include raml/types/error.raml
+  Success: !include raml/types/success.raml
+
+traits:
+  secured:
+    headers:
+          Authorization: String
+  paged:
+    queryParameters:
+      limit?:
+        type: integer
+        description: Is the amount of data that will be displayed when asking for certain request. Example `/regions?limit=13`
+      offset?:
+        type: integer
+        description: Starting point of the data to be shown. Example `/regions?offset=13`
+      page?:
+        type: integer
+        description: Show a static number of elements per page. Example `/regions?pag=4`
+
+/regions:
+  displayName: List all Regions
+  get:
+    description: "Returns all the regions. Authentication Token needed. Accepts query parameters like limit, offset and pag."
+    securedBy: [oauth_2_0]
+    is: [paged,secured]
+    responses:
+      200:
+        body:
+          application/json:
+            type: Region
+            examples:
+              - !include raml/examples/regions/regions.json
+
+      400:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_request.json
+      401:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_client.json
+      404:
+        body:
+        type: Error
+            examples:
+              - !include raml/examples/not_found.json
+
+/regions/{id}:
+  displayName: Show a specified Region
+  get:
+    displayName: "Returns data of a specified region. Authentication Token needed. Id region required."
+    securedBy: [oauth_2_0]
+    parameters:
+      id:
+        type: integer
+        description: The identification number of every region.
+    header:
+      Authentication: !include raml/requests/token.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: Region
+            examples:
+              - !include raml/examples/regions/region.json
+
+      400:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_request.json
+      401:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_client.json
+      404:
+        body:
+        type: Error
+            examples:
+              - !include raml/examples/not_found.json
+
+/communes:
+  displayName: List all Communes
+  get:
+    displayName: "Returns all the communes. Authentication Token needed. Accepts query parameters like limit, offset and pag."
+    securedBy: [oauth_2_0]
+    is: [paged,secured]
+    header:
+      Authentication: !include raml/requests/token.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: Commune
+            examples:
+              - !include raml/examples/commune/communes.json
+
+      400:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_request.json
+      401:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_client.json
+      404:
+        body:
+        type: Error
+            examples:
+              - !include raml/examples/not_found.json
+
+/communes/{id}:
+  displayName: Show a specific Commune
+  get:
+    displayName: "Returns data of a specific commune. Authentication Token needed. Id parameter required."
+    securedBy: [oauth_2_0]
+    parameters:
+      id:
+        type: integer
+        description: The identification number of every commune.
+    header:
+      Authentication: !include raml/requests/token.raml
+    responses:
+      200:
+        body:
+          application/json:
+            type: Commune
+            examples:
+              - !include raml/examples/commune/commune.json
+
+      400:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_request.json
+      401:
+        body:
+          application/json:
+            type: Error
+            examples:
+              - !include raml/examples/invalid_client.json
+      404:
+        body:
+        type: Error
+            examples:
+              - !include raml/examples/not_found.json
+
+
+/is_healthy:
+  displayName: Service Status
+  get:
+    description: Display service status
+    securedBy: [oauth_2_0]
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              status: string
+            example:
+              status: "ok"
+      503:
+        body:
+          application/json:
+            type: object
+            properties:
+              status: string
+            example:
+              status: "offline"

@@ -1,0 +1,52 @@
+{
+  "name": "montt-backend",
+  "version": "1.0.0",
+  "description": "Montt API server",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test npm run build && npm run jest",
+    "jest": "jest --watch ./test && ./src",
+    "babel": "babel src -d dist",
+    "docs": "raml2html docs/api.raml > docs/api.html",
+    "lint": "eslint src",
+    "clean": "rm -rf dist",
+    "docker": "docker-compose -p regions -f ./docker-compose.yml up -d --force-recreate --renew-anon-volumes",
+    "build": "npm run clean && npm run babel",
+    "dev": "npm run lint && npm run build && node dist/index.js",
+    "sequelize": "sequelize",
+    "dev:watch": "nodemon -w ./src -x \"npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/jumpitt_software_factory/regions.git"
+  },
+  "author": "Jumpitt Labs - jrothkegel@jumpitt.com",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jumpitt_software_factory/regions#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "fastest-validator": "^0.6.13",
+    "koa": "^2.6.2",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.10.1",
+    "uuid-validate": "0.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-install": "2.1.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.15.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.10",
+    "raml2html": "^7.2.1",
+    "sequelize-cli": "^5.4.0"
+  }
+}

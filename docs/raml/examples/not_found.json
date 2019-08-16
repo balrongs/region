@@ -1,0 +1,10 @@
+{
+  "status": "not found",
+  "message": "Page Not Found",
+  "errors": [
+    {
+    "code": "N0001",
+    "title": "page not found"
+    }
+  ]
+}

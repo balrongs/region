@@ -1,0 +1,27 @@
+{
+  "data":[
+      {
+          "id": "a4aa8233-2ee2-4e29-8c05-6e9deb60845b",
+          "name": "REGIÓN DE ANTOFAGASTA"
+      },
+      {
+          "id": "5e57d9ce-2ef0-4c25-8b02-cbbad346b0d8",
+          "name": "REGIÓN DE ATACAMA"
+      },
+      {
+          "id": "df0e4f65-43af-4b96-bce6-49b1a9404b09",
+          "name": "REGIÓN DE COQUIMBO"
+      },
+      {
+          "id": "5aaf6645-88ef-4ac2-ac04-f9513c414698",
+          "name": "REGIÓN DE VALPARAÍSO"
+      },
+      {
+          "id": "ce12670f-5995-47cc-956c-4fcff7229811",
+          "name": "REGIÓN DEL LIBERTADOR GRAL. BERNARDO O'HIGGINS"
+      }
+  ],
+  "total":15,
+  "page": 1,
+  "per_page": 5
+}
